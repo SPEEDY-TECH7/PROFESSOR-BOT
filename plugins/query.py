@@ -429,13 +429,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":                        
         buttons = [[
-            InlineKeyboardButton("➕️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ ➕", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
+            InlineKeyboardButton("🎈 Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Cʜᴀᴛ 🎈", url=f"http://t.me/{temp.U_NAME}?startgroup=true")
             ],[
-            InlineKeyboardButton("Gʀᴏᴜᴘ 🍿", url="https://t.me/Primemovieshdlink"), 
-            InlineKeyboardButton("Cʜᴀɴɴᴇʟ 🔈", url="https://t.me/+0ZhEk3IT6fEyYjY1")
+            InlineKeyboardButton("🌲 Gʀᴏᴜᴘ 🌲", url="https://t.me/Primemovieshdlink"), 
+            InlineKeyboardButton("📢 Uᴘᴅᴀᴛᴇs 📢", url="https://t.me/+0ZhEk3IT6fEyYjY1")
             ],[      
-            InlineKeyboardButton("Hᴇʟᴩ 🕸️", callback_data="help"),
-            InlineKeyboardButton("Aʙᴏᴜᴛ ✨", callback_data="about")
+            InlineKeyboardButton("🕸️ Hᴇʟᴩ 🕸️", callback_data="help"),
+            InlineKeyboardButton("✨ Aʙᴏᴜᴛ ✨", callback_data="about")
+            ],[
+            InlineKeyboardButton("🍿 Jᴏɪɴ Mᴏᴠɪᴇs Cʜᴀɴɴᴇʟ 🍿", url="https://t.me/+0ZhEk3IT6fEyYjY1")
         ]]
         await query.edit_message_media(InputMediaPhoto(random.choice(PICS), START_MESSAGE.format(user=query.from_user.mention, bot=client.mention), enums.ParseMode.HTML), reply_markup=InlineKeyboardMarkup(buttons))
        
