@@ -1,0 +1,43 @@
+import java.util.Random;
+
+public class LinearSearch {
+    public static void main(String[] args) {
+        int[] array = new int[10000];
+        Random rand = new Random();
+
+        // Fill array with random numbers
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rand.nextInt(10000);
+        }
+
+        // Best case: search for first element
+        int target = array[0];
+        long startTime = System.nanoTime();
+        int result = linearSearch(array, target);
+        long endTime = System.nanoTime();
+        System.out.println("Best case: " + (endTime - startTime) + " nanoseconds");
+
+        // Average case: search for middle element
+        target = array[array.length / 2];
+        startTime = System.nanoTime();
+        result = linearSearch(array, target);
+        endTime = System.nanoTime();
+        System.out.println("Average case: " + (endTime - startTime) + " nanoseconds");
+
+        // Worst case: search for last element
+        target = array[array.length - 1];
+        startTime = System.nanoTime();
+        result = linearSearch(array, target);
+        endTime = System.nanoTime();
+        System.out.println("Worst case: " + (endTime - startTime) + " nanoseconds");
+    }
+
+    public static int linearSearch(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
